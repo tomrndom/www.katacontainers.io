@@ -130,16 +130,10 @@ module.exports = {
       resolve: 'gatsby-plugin-purgecss', // purges all unused/unreferenced css rules
       options: {
         develop: true, // Activates purging in npm run develop
+        whitelist: ['blockquote', 'pre', 'code', 'ol'],
         purgeOnly: ['/style'], // applies purging only on the bulma css file
       },
     }, // must be after other CSS plugins
-    {
-      resolve: 'gatsby-plugin-netlify', // make sure to keep it last in the array,
-      options: {
-        enableIdentityWidget: true,
-        htmlTitle: `Kata Containers | Content Manager`,
-        includeRobots: false, 
-      }
-    }    
+    'gatsby-plugin-netlify', // make sure to keep it last in the array,      
   ],
 }
